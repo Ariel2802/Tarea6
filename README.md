@@ -14,4 +14,4 @@ Se genera el JSON de petición a la API, un identificador de transacción y los 
 ![img](https://github.com/Ariel2802/Tarea6/blob/master/images/Respuesta.jpg)
 
 ## Notificación en PAYPHONE
-![img](hhttps://github.com/Ariel2802/Tarea6/blob/master/images/NotificacionPayPhone.jpg)
+![img](https://github.com/Ariel2802/Tarea6/blob/master/images/NotificacionPayPhone.jpg)
