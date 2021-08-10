@@ -72,17 +72,22 @@ public class MainActivity extends AppCompatActivity {
 
         tax = Double.parseDouble(txtTarifa.getText().toString());
         tax = (intAmount * tax / 100);
-        intTax = (int) Math.round(tax);
-        hash.put("tax", String.valueOf(intTax));
 
-        amountWithTax = amount - tax;
-        txtTarifa.setText((amountWithTax/100) + "");
-        intAamountWithTax = (int) Math.round(amountWithTax);
-        hash.put("amountWithTax", String.valueOf(intAamountWithTax));
+        if (tax > 0) {
+            intTax = (int) Math.round(tax);
+            hash.put("tax", String.valueOf(intTax));
+            amountWithTax = amount - tax;
+            txtTarifa.setText((amountWithTax / 100) + "");
+            intAamountWithTax = (int) Math.round(amountWithTax);
+            hash.put("amountWithTax", String.valueOf(intAamountWithTax));
 
-        hash.put("amountWithoutTax", "0");
+            hash.put("amountWithoutTax", "0");
+        } else {
+            hash.put("amountWithTax", "0");
+            hash.put("amountWithoutTax", String.valueOf(intAmount));
+        }
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyyddMMHHmmss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         String date = format.format(new Date());
         hash.put("clientTransactionId", date);
         Toast.makeText(MainActivity.this, "Se generó la petición: " + date, Toast.LENGTH_LONG).show();
